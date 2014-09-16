@@ -2,5 +2,5 @@
 
 int main()
 {
-  std::cout << "Hello Berra!"; // Writes to console
+  std::cout << "Hello Berra!"; // Writes to console "Berra"
 }
