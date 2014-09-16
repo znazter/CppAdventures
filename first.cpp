@@ -9,3 +9,4 @@ int main()
 }
 
 //Compile with g++ -Wall first.cpp -o first
+//using gcc to compile is only for compiling c code while g++ is for c++ code
