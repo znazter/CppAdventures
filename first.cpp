@@ -1,7 +1,6 @@
-// my first program in C++
 #include <iostream>
 
 int main()
 {
-  std::cout << "Hello Berra!";
+  std::cout << "Hello Berra!"; // Writes to console
 }
