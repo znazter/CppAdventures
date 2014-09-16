@@ -3,9 +3,8 @@ using namespace std;
 
 int main()
 {
-	cout<<"Waa"<<endl; // Prints Waa in console
+	cout<<"Waa"<<endl;
 
 	return 0;
-}
-
 //Compile with g++ -Wall first.cpp -o first
+}
