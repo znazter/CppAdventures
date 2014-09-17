@@ -84,6 +84,8 @@ int main(void) {
   std::ios::sync_with_stdio(false); // Disables cin and cout synchronization with the C stdio functions
   cin.tie(0); 		            // Disables flushing of cout as soon as you read from cin
 
+//Another problem is that cin and cout are tied, which means that as soon as you read from cin, cout is flushed. While this may be desirable when running a program interactively, it slows things down, especially if there are many alternating reads and writes.
+
   readBipartiteGraph();
 
   writeFlowGraph();

@@ -16,16 +16,24 @@ using std::cin;
 using std::cout;
 using std::cerr;
 
-void readBipartiteGraph() {
-  int x, y, e;
-  // Läs antal hörn och kanter
-  cin >> x >> y >> e;
+struct Edge{
+    int from;
+    int to;
+    int flow;
+};
 
-  // Läs in kanterna
-  for (int i = 0; i < e; ++i) {
-    int a, b;
-    cin >> a >> b;
-  }
+void readBipartiteGraph() {
+    int numberOfNodesInX, numberOfNodesInY, numberOfEdges;
+
+    // Read number of nodes in x and y, and the total number of edges
+    cin >> numberOfNodesInX >> numberOfNodesInY >> numberOfEdges;
+
+    Edge * edges = new Edge[numberOfEdges];
+
+    // Read all edges
+    for (int i = 0; i < numberOfEdges; ++i) {
+        cin >> edges[i].from >> edges[i].to;
+    }
 }
 
 
@@ -33,7 +41,7 @@ void writeFlowGraph() {
   int v = 23, e = 0, s = 1, t = 2;
 
   // Skriv ut antal hörn och kanter samt källa och sänka
-  cout << v << "\n" << s << " " << t << "\n" << e << "\n"; 
+  cout << v << "\n" << s << " " << t << "\n" << e << "\n";
   for (int i = 0; i < e; ++i) {
     int u, v, c;
     // Kant från u till v med kapacitet c
@@ -74,25 +82,24 @@ void writeBipMatchSolution() {
     // Kant mellan a och b ingår i vår matchningslösning
     cout << a << " " << b << "\n";
   }
-
 }
 
 
 int main(void) {
 
-  				    // To speed up cin and cout
-  std::ios::sync_with_stdio(false); // Disables cin and cout synchronization with the C stdio functions
-  cin.tie(0); 		            // Disables flushing of cout as soon as you read from cin
+                                        // To speed up cin and cout
+    std::ios::sync_with_stdio(false);   // Disables cin and cout synchronization with the C stdio functions
+    cin.tie(0); 		                // Disables flushing of cout as soon as you read from cin
 
-  readBipartiteGraph();
+    readBipartiteGraph();
 
-  writeFlowGraph();
+    writeFlowGraph();
 
-  readMaxFlowSolution();
+    readMaxFlowSolution();
 
-  writeBipMatchSolution();
+    writeBipMatchSolution();
 
-  // debugutskrift
-  cerr << "Bipred avslutar\n";
-  return 0;
+
+    cerr << "Exiting...\n";        // For debugging
+    return 0;
 }
